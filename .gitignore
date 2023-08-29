@@ -24,8 +24,8 @@ jspm_packages/
 .env.test
 
 # vitepress build output
-docs/.vitepress/cache/
-docs/.vitepress/dist/
+.vitepress/cache/
+.vitepress/dist/
 
 # Serverless directories
 .serverless/
