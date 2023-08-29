@@ -3,15 +3,16 @@ import { defineConfig } from 'vitepress';
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
   // lang: 'en-US',
-  title: 'Common admin template',
-  description: 'Vite & Vue powered static site generator.',
-
-  // config source directory
-  srcDir: './src',
+  title: 'JYJ的技术博客',
+  description: '一个前端',
   // https://vitepress.dev/guide/deploy#setting-a-public-base-path
   base: '/docs/',
 
+  // config source directory
+  srcDir: 'src',
+
   themeConfig: {
+    logo: '/imgs/logo.svg',
     nav: [
     ],
 
