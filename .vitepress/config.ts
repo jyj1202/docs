@@ -42,7 +42,7 @@ const nav = [
       { text: 'react', link: '/front-end/catalogue' },
       { text: '小程序', link: '/front-end/catalogue' },
       { text: '工程化', link: '/front-end/catalogue' },
-      { text: '个人项目', link: '/front-end/my-project/j-admin/'}
+      { text: '个人项目', link: '/front-end/my-project/j-admin/introduce'}
     ]
   },
   {
@@ -86,6 +86,7 @@ const sidebar =  {
   '/site-setup/': [{
     text: '本站搭建教学',
     items: [
+      { text: '目录结构', link: '/site-setup/structure' },
       { text: 'vitepress', link: '/site-setup/vitepress' },
     ],
   }],
@@ -99,7 +100,13 @@ const sidebar =  {
   '/front-end/my-project/': [{
     text: '个人项目',
     items: [
-      { text: '后台管理模板JAdmin', link: '/front-end/my-project/j-admin/' },
+      { text: '后台管理模板JAdmin',
+        items: [
+          { text: '项目介绍', link: '/front-end/my-project/j-admin/introduce' },
+          { text: '目录结构', link: '/front-end/my-project/j-admin/structure' },
+          { text: '项目设计及思路', link: '/front-end/my-project/j-admin/design' },
+        ],
+      },
       { text: '表单设计器', link: '/front-end/my-project/j-formdesign/' },
     ]
   }],
