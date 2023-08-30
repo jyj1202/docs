@@ -34,15 +34,16 @@ const nav = [
     text: '前端',
     activeMatch: '^/front-end/',
     items: [
-      { text: 'css', link: '/front-end/css' },
-      { text: 'js', link: '/front-end/catalogue' },
+      { text: 'css', link: '/front-end/css/sass/' },
+      { text: 'js', link: '/front-end/js/' },
       { text: 'ts', link: '/front-end/catalogue' },
       { text: 'vue2', link: '/front-end/catalogue' },
       { text: 'vue3', link: '/front-end/catalogue' },
       { text: 'react', link: '/front-end/catalogue' },
       { text: '小程序', link: '/front-end/catalogue' },
-      { text: '工程化', link: '/front-end/catalogue' },
-      { text: '个人项目', link: '/front-end/my-project/j-admin/introduce'}
+      { text: '工程化', link: '/front-end/build-tools/' },
+      { text: '个人项目', link: '/front-end/my-project/j-admin/introduce'},
+      { text: '问题合集', link: '/front-end/questions/'}
     ]
   },
   {
@@ -51,15 +52,20 @@ const nav = [
     activeMatch: '^/back-end/'
   },
   {
+    text: '数据库',
+    link: '/database/mysql/',
+    activeMatch: '^/database/'
+  },
+  {
     text: '计算机网络',
     link: '/network/',
     activeMatch: '^/network/'
   },
-  // {
-  //   text: '操作系统',
-  //   link: '/front-end/',
-  //   activeMatch: '^/front-end/'
-  // },
+  {
+    text: '操作系统',
+    link: '/operating-system/linux/',
+    activeMatch: '^/operating-system/'
+  },
   // {
   //   text: '算法',
   //   link: '/front-end/',
@@ -95,6 +101,22 @@ const sidebar =  {
     items: [
       { text: '网站说明', link: '/guide/' },
       { text: '网站目录', link: '/guide/catalogue' },
+      { text: '关于我', link: '/guide/about-me' },
+    ],
+  }],
+  '/front-end/css/': [{
+    text: 'css',
+    // link: '/front-end/build-tools/',
+    items: [
+      { text: 'sass', link: '/front-end/css/sass/' },
+    ],
+  }],
+  '/front-end/build-tools/': [{
+    text: '工程化',
+    link: '/front-end/build-tools/',
+    items: [
+      { text: 'vite', link: '/front-end/build-tools/vite/' },
+      { text: 'webpack', link: '/front-end/build-tools/webpack/' }
     ],
   }],
   '/front-end/my-project/': [{
