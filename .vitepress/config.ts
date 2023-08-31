@@ -21,12 +21,7 @@ const nav = [
   //   ]
   // },
   {
-    text: '本站搭建教学',
-    link: '/site-setup/vitepress',
-    activeMatch: '^/site-setup/'
-  },
-  {
-    text: '说明',
+    text: '介绍',
     link: '/guide/',
     activeMatch: '^/guide/'
   },
@@ -40,6 +35,7 @@ const nav = [
       { text: 'vue2', link: '/front-end/catalogue' },
       { text: 'vue3', link: '/front-end/catalogue' },
       { text: 'react', link: '/front-end/catalogue' },
+      { text: 'nodejs', link: '/front-end/nodejs' },
       { text: '小程序', link: '/front-end/catalogue' },
       { text: '工程化', link: '/front-end/build-tools/' },
       { text: '个人项目', link: '/front-end/my-project/j-admin/introduce'},
@@ -55,6 +51,13 @@ const nav = [
     text: '数据库',
     link: '/database/mysql/',
     activeMatch: '^/database/'
+  },
+  {
+    text: '开发工具',
+    activeMatch: '^/dev-tools/',
+    items: [
+      { text: '版本控制', link: '/dev-tools/version-control/git/command'}
+    ]
   },
   {
     text: '计算机网络',
@@ -89,27 +92,45 @@ const nav = [
 ]
 
 const sidebar =  {
-  '/site-setup/': [{
-    text: '本站搭建教学',
-    items: [
-      { text: '目录结构', link: '/site-setup/structure' },
-      { text: 'vitepress', link: '/site-setup/vitepress' },
-    ],
-  }],
   '/guide/': [{
-    text: '说明',
+    text: '基本介绍',
     items: [
       { text: '网站说明', link: '/guide/' },
       { text: '网站目录', link: '/guide/catalogue' },
       { text: '关于我', link: '/guide/about-me' },
     ],
+  }, {
+    text: '本站搭建介绍',
+    items: [
+      { text: '目录结构', link: '/guide/site-setup/structure' },
+      { text: 'vitepress',
+        items: [
+          { text: '问题合集', link: '/guide/site-setup/vitepress/questions' },
+          { text: 'nodejs脚本', link: '/guide/site-setup/vitepress/scripts' }
+        ]
+      },
+    ],
   }],
+  // front-end
   '/front-end/css/': [{
     text: 'css',
     // link: '/front-end/build-tools/',
     items: [
       { text: 'sass', link: '/front-end/css/sass/' },
     ],
+  }],
+  '/front-end/nodejs/': [{
+    text: 'Node.js',
+    // items: [
+    //   { text: '后台管理模板JAdmin',
+    //     items: [
+    //       { text: '项目介绍', link: '/front-end/my-project/j-admin/introduce' },
+    //       { text: '目录结构', link: '/front-end/my-project/j-admin/structure' },
+    //       { text: '项目设计及思路', link: '/front-end/my-project/j-admin/design' },
+    //     ],
+    //   },
+    //   { text: '表单设计器', link: '/front-end/my-project/j-formdesign/' },
+    // ]
   }],
   '/front-end/build-tools/': [{
     text: '工程化',
@@ -130,6 +151,30 @@ const sidebar =  {
         ],
       },
       { text: '表单设计器', link: '/front-end/my-project/j-formdesign/' },
+    ]
+  }],
+  // dev-tools
+  '/dev-tools/version-control': [{
+    text: '版本控制',
+    items: [
+      { text: 'git',
+        items: [
+          { text: '常用命令', link: '/dev-tools/version-control/git/command' },
+          { text: '问题合集', link: '/dev-tools/version-control/git/questions' },
+        ],
+      },
+      { text: 'github',
+        items: [
+          // { text: '常用命令', link: '/dev-tools/version-control/git/command' },
+        ],
+      },
+    ]
+  }],
+  '/essay': [{
+    text: '随笔',
+    link: '/essay/',
+    items: [
+      { text: '2023-08-31', link: '/essay/2023-08-31' },
     ]
   }],
 }

@@ -10,7 +10,7 @@ hero:
     alt: VitePress
   actions:
     - theme: brand
-      text: 本站说明
+      text: 本站介绍
       link: /guide/
     - theme: alt
       text: 我的github
