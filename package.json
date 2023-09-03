@@ -1,19 +1,21 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "",
+  "description": "jyj's docs",
   "main": "index.js",
   "type": "module",
   "packageManager": "pnpm@8.6.12",
   "scripts": {
-    "docs:dev": "vitepress dev --port 8080",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "vitepress dev --port 8080",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "generate:sidebar": "node ./scripts/getSidebar.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.5.9",
     "vitepress": "1.0.0-rc.10"
   }
 }

@@ -5,9 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@types/node':
+    specifier: ^20.5.9
+    version: 20.5.9
   vitepress:
     specifier: 1.0.0-rc.10
-    version: 1.0.0-rc.10(@algolia/client-search@4.19.1)(search-insights@2.7.0)
+    version: 1.0.0-rc.10(@algolia/client-search@4.19.1)(@types/node@20.5.9)(search-insights@2.7.0)
 
 packages:
 
@@ -417,6 +420,10 @@ packages:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
 
+  /@types/node@20.5.9:
+    resolution: {integrity: sha512-PcGNd//40kHAS3sTlzKB9C9XL4K0sTup8nbG5lC14kzEteTNuAFh9u5nA0o5TWnSG2r/JNPRXFVcHJIIeRlmqQ==}
+    dev: true
+
   /@types/web-bluetooth@0.0.17:
     resolution: {integrity: sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==}
     dev: true
@@ -736,7 +743,7 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /vite@4.4.9:
+  /vite@4.4.9(@types/node@20.5.9):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -764,6 +771,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.5.9
       esbuild: 0.18.20
       postcss: 8.4.28
       rollup: 3.28.1
@@ -771,7 +779,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.0-rc.10(@algolia/client-search@4.19.1)(search-insights@2.7.0):
+  /vitepress@1.0.0-rc.10(@algolia/client-search@4.19.1)(@types/node@20.5.9)(search-insights@2.7.0):
     resolution: {integrity: sha512-+MsahIWqq5WUEmj6MR4obcKYbT7im07jZPCQPdNJExkeOSbOAJ4xypSLx88x7rvtzWHhHc5aXbOhCRvGEGjFrw==}
     hasBin: true
     dependencies:
@@ -784,7 +792,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.9)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
