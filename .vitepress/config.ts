@@ -26,7 +26,7 @@ const nav = [
       { text: 'react', link: '/front-end/react-sidebar' },
       { text: 'nodejs', link: '/front-end/nodejs-sidebar' },
       { text: '小程序', link: '/front-end/mini-program-sidebar' },
-      { text: '工程化', link: '/front-end/build-tools-sidebar/' },
+      { text: '工程化', link: '/front-end/project-tools-sidebar/' },
       { text: '个人项目', link: '/front-end/my-project-sidebar/j-admin/introduce.html'},
       { text: '问题合集', link: '/front-end/questions-sidebar/index.html'}
     ]
