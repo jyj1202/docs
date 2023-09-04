@@ -9,7 +9,8 @@
     "dev": "vitepress dev --port 8080",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "generate:sidebar": "node ./scripts/getSidebar.js"
+    "generate:dev": "node ./scripts/getSidebar.js && vitepress dev --port 8080",
+    "generate:build": "node ./scripts/getSidebar.js && vitepress build"
   },
   "keywords": [],
   "author": "",
