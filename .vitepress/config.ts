@@ -93,7 +93,7 @@ const nav = [
 export default defineConfig({
   // lang: 'en-US',
   title: 'JYJ\'s Blog',
-  description: '介英杰的技术博客',
+  description: '介英杰的技术文档',
   head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
   // https://vitepress.dev/guide/deploy#setting-a-public-base-path
   base: '/docs/',
@@ -104,7 +104,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   themeConfig: {
-    siteTitle: 'JYJ的博客',
+    siteTitle: 'JYJ的文档',
     logo: '/logo.svg',
     nav,
     sidebar: JSON.parse(sidebar),

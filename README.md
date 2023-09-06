@@ -1,4 +1,4 @@
-# [jyj的博客](https://jyj1202.github.io/docs/)
+# [jyj的文档](https://jyj1202.github.io/docs/)
 
 - vitepress 编写  
 - 添加自定义脚本
