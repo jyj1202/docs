@@ -11,18 +11,18 @@ git push -u origin main
 ```
 
 - 修改远程仓库地址
-```bash
+```sh
 git remote set-url origin <地址>
 ```
 
 - 拉取某个远程分支
-```bash
+```sh
 git checkout -b <本地分支名> origin/<远程分支名>
 git checkout -b myfeature origin/feature
 ```
 
 - 撤销提交revert
-```bash
+```sh
 # git revert用于撤销某次提交的修改
 # git revert 对于多次提交修改相同文件的情况可能会出现冲突
 # 命令:

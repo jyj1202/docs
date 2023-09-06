@@ -10,22 +10,23 @@
 // const path = require('path');
 
 import * as fs from 'node:fs/promises';
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
+console.log(__filename);
 const __dirname = path.dirname(__filename);
 
 
 export default function autoGenerateSidebar(options) {
   console.log(options);
   const { docsPath } = options
-  const root = path.join(__dirname, docsPath)
+  const root = path.resolve(__dirname, docsPath)
   
   const config = async () => {
     const res = await getFolderInfo(root, root)
     let sidebar = generateSidebar(res.items)
-    fs.writeFile(path.join(__dirname, './dist.json'), JSON.stringify(sidebar))
+    fs.writeFile(path.resolve(__dirname, './dist.json'), JSON.stringify(sidebar))
     return {
       vitepress: {
         site: {
