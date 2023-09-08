@@ -92,8 +92,8 @@ const nav = [
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
   // lang: 'en-US',
-  title: 'JYJ\'s Blog',
-  description: '介英杰的技术文档',
+  title: 'JYJ\'s Doc',
+  description: '介英杰的文档',
   head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
   // https://vitepress.dev/guide/deploy#setting-a-public-base-path
   base: '/docs/',

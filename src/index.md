@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: JYJ的技术文档
+  name: JYJ的个人文档
   text: 一个半路出家的低级前端开发
   tagline: 莫道桑榆晚，为霞尚满天
   image:
