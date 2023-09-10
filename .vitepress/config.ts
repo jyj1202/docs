@@ -49,7 +49,7 @@ const nav = [
     text: '开发工具',
     activeMatch: '^/dev-tools/',
     items: [
-      { text: '版本控制', link: '/dev-tools/version-control-sidebar/git/command'},
+      { text: '版本控制', link: '/dev-tools/version-control-sidebar/git/base-command'},
       { text: 'github', link: '/dev-tools/version-control-sidebar/git/command'}
     ]
   },
