@@ -243,3 +243,30 @@
   }
   ```
   总结一下，类的自身类型就是一个构造函数，可以单独定义一个接口来表示。
+
+- Enum 结构比较适合的场景是，成员的值不重要，名字更重要，从而增加代码的可读性和可维护性。
+
+- 由于as const会将数组变成只读元组，所以很适合用于函数的 rest 参数。
+  ```typescript
+  function add(x:number, y:number) {
+    return x + y;
+  }
+
+  const nums = [1, 2];
+  const total = add(...nums); // 报错
+  上面示例中，变量nums的类型推断为number[]，导致使用扩展运算符...传入函数add()会报错，因为add()只能接受两个参数，而...nums并不能保证参数的个数。
+
+  事实上，对于固定参数个数的函数，如果传入的参数包含扩展运算符，那么扩展运算符只能用于元组。只有当函数定义使用了 rest 参数，扩展运算符才能用于数组。
+
+  解决方法就是使用as const断言，将数组变成元组。
+
+  const nums = [1, 2] as const;
+  const total = add(...nums); // 正确
+  ```
+  上面示例中，使用as const断言后，变量nums的类型会被推断为readonly [1, 2]，使用扩展运算符展开后，正好符合函数add()的参数类型。
+
+- 非空断言只有在打开编译选项strictNullChecks时才有意义。如果不打开这个选项，编译器就不会检查某个变量是否可能为undefined或null。
+
+- namespace 会变成一个值，保留在编译后的代码中。这一点要小心，它不是纯的类型代码。
+
+  namespace 与模块的作用是一致的，都是把相关代码组织在一起，对外输出接口。区别是一个文件只能有一个模块，但可以有多个 namespace。由于模块可以取代 namespace，而且是 JavaScript 的标准语法，还不需要编译转换，所以建议总是使用模块，替代 namespace。
