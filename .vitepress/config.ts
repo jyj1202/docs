@@ -22,7 +22,7 @@ const nav = [
       { text: 'js', link: '/front-end/js-sidebar/core/index.html' },
       { text: 'ts', link: '/front-end/ts-sidebar/' },
       { text: 'vue2', link: '/front-end/vue2-sidebar' },
-      { text: 'vue3', link: '/front-end/vue3-sidebar' },
+      { text: 'vue3', link: '/front-end/vue3-sidebar/props.html' },
       { text: 'react', link: '/front-end/react-sidebar' },
       { text: 'nodejs', link: '/front-end/nodejs-sidebar' },
       { text: '小程序', link: '/front-end/mini-program-sidebar' },
