@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 本站介绍
-      link: /guide-sidebar/base/index.html
+      link: /guide-sidebar/base/01-about-site.html
     - theme: alt
       text: 我的github
       link: https://github.com/jyj1202

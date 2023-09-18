@@ -11,7 +11,7 @@ const sidebar = await readFile(path.join(__dirname, './sidebar.json'), 'utf-8')
 const nav = [
   {
     text: '本站介绍',
-    link: '/guide-sidebar/base/index.html',
+    link: '/guide-sidebar/base/01-about-site.html',
     activeMatch: '^/guide/'
   },
   { 
@@ -85,6 +85,7 @@ const nav = [
     activeMatch: '^/other/',
     items: [
       { text: '随笔', link: '/other/essay-sidebar/index.html'},
+      { text: '关于面试', link: '/other/about-interview-sidebar/index.html'},
     ],
   }
 ]
