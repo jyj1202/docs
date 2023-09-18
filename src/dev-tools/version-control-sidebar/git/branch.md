@@ -23,4 +23,24 @@
   更新关联分支：由于本地分支已与远程的另一个分支关联，执行推送操作后，本分支  的追踪关系将被更新为新创建的远程分支 remote-branch-name。这样，以的 git   pull 和 git push 操作就可以直接使用 git pull 或 git push，无指定远程分支  的名称。
   需要注意的是，执行 git push   originlocal-branch-name:remote-branch-name -u 命令时，确保你有足够的权  限远程仓库上进行推送操作。
 
+
+## tag
+  - 
+    ```sh
+    git tag -a test -m test 94e6e728b88a9a6c28d573ff972a4aaa111cc55d  (completed in 0.087s)
+    git tag -d test  (completed in 0.092s)
+    ```
+
+  - git push --follow-tags origin master
+  
+    用于将本地分支的提交以及与之关联的标签一起推送到远程仓库。
+
+    下面是对该命令中每个部分的解释：
+
+    git push: 这是用于将本地分支的更改推送到远程仓库的 Git 命令。
+    --follow-tags: 这是一个选项，它告诉 Git 在推送时将所有本地标签与相应的提交一起推送到远程仓库。如果标签与已提交的 commit 相关联，那么这些标签也会被推送。
+    origin: 这是远程仓库的名称，通常指定为 "origin"。它表示你要将更改推送到与本地仓库关联的远程仓库。
+    master: 这是本地分支的名称，通常表示主分支（例如，"master"、"main" 或其他自定义名称）。
+    因此，git push --follow-tags origin master 的含义是将本地分支 master 的所有提交以及与之相关联的标签一起推送到名为 origin 的远程仓库。这样可以确保在推送的同时，相关的标签也被同步到远程仓库中，方便其他开发人员或协作者访问和使用这些标签。
+  
 ## git 工作流
