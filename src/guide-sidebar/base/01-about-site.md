@@ -1,5 +1,5 @@
 # 搭建这个网站的目的？
-一是为了记录分享前端的技术知识，当然不局限于前端，还包括网络、后端（java、nodejs）、操作系统、算法等其他所有我需要的技术知识。甚至不局限于编程技术知识。
+作文文档网站，主要是为了记录分享编程技术知识，包括前端、网络、后端、操作系统、算法等其他所有我需要的技术知识。甚至不局限于编程技术知识。
 
 编程知识，是很难穷尽的，不可能记住所有的知识。
 
@@ -18,7 +18,7 @@
 
 
 # 关于本站搭建说明
-- 使用vitepress编写，github pages 进行静态资源部署，配合github actions完成自动化部署。
-- 本站参考vue3官方文档项目进行目录结构组织。
-- 本站代码开源，[点击前往github](https://github.com/jyj1202/docs)。
+- 使用vitepress编写，github pages 配合 github actions 完成自动部署。
+- 参考vue3官方文档项目进行目录结构组织。
+- 如果你想看本网站源码，[可以去这里](https://github.com/jyj1202/docs)。
 - 关于vitepress的部分使用问题，请看[网站搭建-vitepress](../site-setup/vitepress/questions.md)部分。

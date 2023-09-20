@@ -1,6 +1,6 @@
 
 
-# 网站目录结构
+# 网站内容概览
 - 本站搭建教学
   - vitepress
   - github workflow
