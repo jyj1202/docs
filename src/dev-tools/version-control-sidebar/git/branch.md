@@ -2,6 +2,10 @@
 ## 分支操作
 - 查看本地分支上游分支 git branch -vv
 
+- 不同名称分支是没法直接push的。
+
+- git pull的时候，只有出现修改相同文件相同区域，才会出现冲突。
+
 - 推送本地分支到远程
   第一次推送需要加-u
   git push origin local-branch-name:remote-branch-name
@@ -42,5 +46,3 @@
     origin: 这是远程仓库的名称，通常指定为 "origin"。它表示你要将更改推送到与本地仓库关联的远程仓库。
     master: 这是本地分支的名称，通常表示主分支（例如，"master"、"main" 或其他自定义名称）。
     因此，git push --follow-tags origin master 的含义是将本地分支 master 的所有提交以及与之相关联的标签一起推送到名为 origin 的远程仓库。这样可以确保在推送的同时，相关的标签也被同步到远程仓库中，方便其他开发人员或协作者访问和使用这些标签。
-  
-## git 工作流

@@ -19,7 +19,7 @@ const nav = [
     activeMatch: '^/front-end/',
     items: [
       { text: 'css', link: '/front-end/css-sidebar/sass/index.html' },
-      { text: 'js', link: '/front-end/js-sidebar/core/index.html' },
+      { text: 'js', link: '/front-end/js-sidebar/index.html' },
       { text: 'ts', link: '/front-end/ts-sidebar/' },
       { text: 'vue2', link: '/front-end/vue2-sidebar' },
       { text: 'vue3', link: '/front-end/vue3-sidebar/props.html' },
