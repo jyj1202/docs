@@ -60,8 +60,8 @@ export async function getSidebar(docsPath) {
 
 
 /**
- * @param {array} items 
- * @param {object} sidebar 
+ * @param {array} items
+ * @param {object} sidebar
  * @returns default {}
  */
 function generateSidebar(items, sidebar={}) {
@@ -78,8 +78,8 @@ function generateSidebar(items, sidebar={}) {
 
 /**
  * 
- * @param {string} root 
- * @param {string} absoluteDir 
+ * @param {string} root dir
+ * @param {string} absoluteDir with filename or foldername
  * @returns 
  */
 async function getFolderInfo(root, absoluteDir) {
