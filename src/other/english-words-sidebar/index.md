@@ -1,0 +1,3 @@
+- built-in  内置的
+- astonishingly 令人惊讶的
+- legacy 传统的，遗产的
