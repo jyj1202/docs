@@ -1,12 +1,5 @@
 import { defineConfig } from 'vitepress';
-// import sidebar from "../scripts/autoGenerateSidebar";
-import {readFile} from 'node:fs/promises';
-import { fileURLToPath } from 'url';
-import path from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const sidebar = await readFile(path.join(__dirname, './sidebar.json'), 'utf-8')
+import sidebar from "../vite-plugin-autoSidebar";
 
 const nav = [
   {
@@ -28,7 +21,8 @@ const nav = [
       { text: '小程序', link: '/front-end/mini-program-sidebar' },
       { text: '工程化', link: '/front-end/project-tools-sidebar/' },
       { text: '个人项目', link: '/front-end/my-project-sidebar/j-admin/introduce.html'},
-      { text: '问题合集', link: '/front-end/questions-sidebar/index.html'}
+      { text: '问题合集', link: '/front-end/questions-sidebar/index.html'},
+      { text: '工具网站', link: '/front-end/tools-sidebar/index.html'}
     ]
   },
   {
@@ -89,7 +83,6 @@ const nav = [
     ],
   }
 ]
-
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
   // lang: 'en-US',
@@ -108,15 +101,15 @@ export default defineConfig({
     siteTitle: 'JYJ的文档',
     logo: '/logo.svg',
     nav,
-    sidebar: JSON.parse(sidebar),
+    sidebar: [],
     search: {
       provider: 'local'
     }
     
   },
-  // vite: {
-  //   plugins: [
-  //     sidebar({ docsPath: '../src' })
-  //   ]
-  // }
+  vite: {
+    plugins: [
+      sidebar({ docRoot: '../src' })
+    ]
+  }
 });

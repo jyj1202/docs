@@ -12,87 +12,39 @@
 import * as fs from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'path';
+import type { Plugin, ViteDevServer } from 'vite';
+import type { UserConfig, FolderInfo, AutoSidebarOption } from "./type";
+import type { DefaultTheme} from 'vitepress/types/default-theme.d.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 console.log(__filename);
 const __dirname = path.dirname(__filename);
 
 
-export default function autoGenerateSidebar(options) {
-  console.log(options);
-  const { docsPath } = options
-  const root = path.resolve(__dirname, docsPath)
-  
-  const config = async () => {
-    const res = await getFolderInfo(root, root)
-    let sidebar = generateSidebar(res.items)
-    fs.writeFile(path.resolve(__dirname, './dist.json'), JSON.stringify(sidebar))
-    return {
-      vitepress: {
-        site: {
-          themeConfig: {
-            sidebar
-          }
-        },
-        userConfig: {
-          themeConfig: {
-            sidebar
-          }
-        }
-      }
-    }
-  }
 
-  return {
-    name: 'vite-plugin-vitepress-autoSidebar',
-    config,
-    // configResolved(resolvedConfig) {
-    //   fs.writeFile(path.join(__dirname, './dist.json'), JSON.stringify(resolvedConfig))
-    // },
-  }
-}
-
-export async function getSidebar(docsPath) {
-  const root = path.join(__dirname, docsPath)
-  const res = await getFolderInfo(root, root)
-  return generateSidebar(res.items)
-}
-
-
-/**
- * @param {array} items
- * @param {object} sidebar
- * @returns default {}
- */
-function generateSidebar(items, sidebar={}) {
+function generateSidebar(items: FolderInfo[], sidebar={}): DefaultTheme.Sidebar {
   items.forEach(item => {
     const { items: subItems, isSidebar, path} = item
     if (isSidebar) {
       sidebar[`/${path}/`] = [item]
-    } else {
+    } else if (subItems) {
       generateSidebar(subItems, sidebar)
     }
   })
   return sidebar
 }
 
-/**
- * 
- * @param {string} root dir
- * @param {string} absoluteDir with filename or foldername
- * @returns 
- */
-async function getFolderInfo(root, absoluteDir) {
+async function getFolderInfo(root: string, absoluteDir: string): Promise<FolderInfo> {
   const foldernameWithoutExt = getNameWithoutExt(absoluteDir)
-  const items = []
+  const items: FolderInfo[] = []
   const isSidebar = foldernameWithoutExt.endsWith('-sidebar')
   const relativeDir = path.relative(root, absoluteDir).replace(/\\/g, '/');
-  const folderInfo = {
+  const folderInfo: FolderInfo = {
     text: foldernameWithoutExt.replace(/-sidebar$/, ''),
-    items,
     isSidebar,
     path: relativeDir,
-    collapsed: true
+    collapsed: true,
+    items,
   }
 
   const files = await fs.readdir(absoluteDir);
@@ -102,15 +54,18 @@ async function getFolderInfo(root, absoluteDir) {
     const stat = await fs.stat(filePath);
     const fileNameWithoutExt = getNameWithoutExt(filename)
     
+    // 如果是隐藏文件，则跳过当前循环
     if (fileNameWithoutExt.endsWith('-hide')) {
       continue
     }
-
+    // 如果是目录，则递归
     if (stat.isDirectory()) {
       items.push(await getFolderInfo(root, filePath))
       continue
     }
+    // 如果后缀名是.md（忽略大小写），则需要添加link属性
     if (path.extname(filename).toLowerCase() === '.md') {
+      // 如果是index.md，则向folderInfo上添加link属性，否则向folderInfo.items添加
       if (fileNameWithoutExt.toLowerCase() === 'index') {
         folderInfo.link = `/${relativeDir}/index.html`
       } else {
@@ -125,8 +80,45 @@ async function getFolderInfo(root, absoluteDir) {
   return folderInfo
 }
 
-function getNameWithoutExt(filePath) {
+function getNameWithoutExt(filePath: string) {
   const fileName = path.basename(filePath);
   const fileNameWithoutExt = path.parse(fileName).name;
   return fileNameWithoutExt;
+}
+
+
+export default function autoGenerateSidebar(options: AutoSidebarOption): Plugin {
+  console.log(options);
+  const { docRoot } = options
+  const root = path.resolve(__dirname, docRoot)
+  
+  return {
+    name: 'vite-plugin-vitepress-autoSidebar',
+    configureServer ({
+      watcher,
+      restart
+    }: ViteDevServer) {
+      const fsWatcher = watcher.add('*.md');
+      fsWatcher.on('all', async (event, path) => {
+        if (event !== 'change') {
+          console.log(`${event} ${path}`);
+          try {
+            await restart();
+            // ws.send({
+            //   type: 'full-reload',
+            // })
+            console.log('update sidebar...');
+          } catch {
+            console.log(`${event} ${path}`);
+            console.log('update sidebar failed');
+          }
+        }
+      });
+    },
+    async config(config) {
+      const folderInfo = await getFolderInfo(root, root);
+      (config as UserConfig).vitepress.site.themeConfig.sidebar = folderInfo.items ? generateSidebar(folderInfo.items) : {}
+      return config
+    }
+  }
 }
