@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import sidebar from "../vite-plugin-autoSidebar";
+import sidebar from "../vite-plugin-vitepress-autoSidebar";
 
 const nav = [
   {
