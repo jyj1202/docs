@@ -29,7 +29,8 @@ const nav = [
     text: '后端',
     activeMatch: '^/back-end/',
     items: [
-      {text: 'java', link: '/back-end/java-sidebar/index.html'}
+      {text: 'java', link: '/back-end/java-sidebar/index.html'},
+      {text: 'node', link: '/back-end/node-sidebar/index.html'}
     ]
   },
   {

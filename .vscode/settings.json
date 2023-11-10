@@ -6,5 +6,6 @@
     "nuxt",
     "siderbar",
     "uniapp"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
