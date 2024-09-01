@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 
 
 
-function generateSidebar(items: FolderInfo[], sidebar={}): DefaultTheme.Sidebar {
+function generateSidebar(items: FolderInfo[], sidebar:Record<string,FolderInfo[]>={}): DefaultTheme.Sidebar {
   items.forEach(item => {
     const { items: subItems, isSidebar, path} = item
     if (isSidebar) {

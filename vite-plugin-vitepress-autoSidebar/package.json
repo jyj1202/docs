@@ -1,7 +1,12 @@
 {
   "name": "vite-plugin-vitepress-auto-sidebar",
   "version": "1.0.0",
+  "author": "jyj1202",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jyj1202/docs/tree/main/vite-plugin-vitepress-autoSidebar"
+  },
   "keywords": [
     "vite",
     "vitepress"
@@ -11,7 +16,6 @@
   "scripts": {
     "build": "vite build"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "vite": "^4.5.0"

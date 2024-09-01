@@ -2,7 +2,6 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "jyj's docs",
-  "main": "index.js",
   "type": "module",
   "packageManager": "pnpm@8.6.12",
   "scripts": {

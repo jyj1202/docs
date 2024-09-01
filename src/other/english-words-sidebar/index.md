@@ -9,3 +9,12 @@
 - review 评审；复习
 - build-in 内置的
 - comment out注释掉
+
+- type v: 打字
+
+- ultimately: 最终的
+- arbitrary: 任意的, 随意的
+- manifest: 清单
+- AKA: 又名
+
+
