@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.5.9",
-    "vitepress": "1.0.0-rc.10"
+    "@types/node": "^20.19.24",
+    "vitepress": "1.6.3"
   }
 }
