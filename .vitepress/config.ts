@@ -112,5 +112,6 @@ export default defineConfig({
     plugins: [
       sidebar({ docRoot: '../src' })
     ]
-  }
+  },
+  lastUpdated: true
 });
